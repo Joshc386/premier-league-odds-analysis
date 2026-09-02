@@ -17,3 +17,7 @@ venv/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# JupyterLab scratch files
+.virtual_documents/
+Untitled*.ipynb
