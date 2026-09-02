@@ -1,0 +1,19 @@
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Secrets
+.env
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# OS / OneDrive cruft
+Thumbs.db
+desktop.ini
+.DS_Store
