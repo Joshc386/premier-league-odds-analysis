@@ -65,7 +65,9 @@ So "Bet365 prices draws well" needs stating carefully: the draw prices are extre
   <img src="images/monthly-error-away.png" width="32%" alt="Monthly error, away wins">
 </p>
 
-Mean error is near zero in every month except March, where home wins and draws move in opposite directions — roughly mirror images. Across 30 tests (3 outcomes × 10 months):
+Mean error is near zero in every month except March, where home wins and draws move in opposite directions — roughly mirror images.
+
+> The notebook reports the raw monthly p-values. The Bonferroni-adjusted column below is computed here rather than in the notebook: it is simply `p × 30`, the 30 being 3 outcomes × 10 months (June and July are excluded as they contain only rescheduled Covid-era fixtures).
 
 | | p | Bonferroni-adjusted |
 |---|---|---|
@@ -91,7 +93,7 @@ All three lose, which is what a 5.4% average margin buys the bookmaker. Calibrat
 
 ## Limitations
 
-- **These are pre-match odds, not closing odds.** football-data.co.uk publishes Bet365's closing line separately (`B365CH`/`CD`/`CA`), but only for 2,660 of the 9,120 fixtures, beginning around 2019/20. The closing line is the efficient one, so testing openers is a different — and arguably more interesting — question, but it is a different question.
+- **These are pre-match odds, not closing odds.** football-data.co.uk publishes Bet365's closing line separately (`B365CH`/`CD`/`CA`), but only for 2,660 of the 9,120 fixtures, beginning around 2019/20. That count comes from the source CSVs directly — the notebook drops those columns during cleaning, so it does not appear in the analysis. The closing line is the efficient one, so testing openers is a different — and arguably more interesting — question, but it is a different question.
 - **Matches are treated as independent.** They are not: injuries, managerial changes and league position all carry across fixtures. The chi-squared test assumes independence, and the p-values should be read with that in mind.
 - **Binning discards information.** Five-point bins give usable sample sizes at the cost of resolution within each bin.
 - **The March result is one finding among 30 tests.** It survives Bonferroni correction, but it was found by looking rather than predicted in advance.
