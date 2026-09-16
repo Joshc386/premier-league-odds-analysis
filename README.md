@@ -29,11 +29,15 @@ Calibration quality was measured mostly visually but also quantitatively using t
   <img src="images/calibration-away.png" width="49%" alt="Calibration, away wins">
 </p>
 
-Pooled across all three outcomes, bins sit a mean of **0.93 percentage points** from perfect calibration, 17.61 points in total across 19 populated bins. Close, but not uniform: one bin, **30–35%**, falls outside its 95% interval, with 574 observed against 623.2 expected — a gap of 49.2 against a bar of ±40.2.
+Pooled across all three outcomes, bins sit a mean of **0.93 percentage points** from perfect calibration, 17.61 points in total across 19 populated bins. Close, but not uniform: one bin, **30–35%**, falls outside its 95% interval, with 574 observed against 623.2 expected — a gap of 49.2 against a bar of ±40.2. A lot of the miscalibration on show is evident in the red-coloured data points which represents bins with far lower data points. But, the 30-35% bin is unlikely noise due to its large sample size so there is potential evidence for miscalibration here overall.
 
 No combined chi-squared test is reported. Every fixture contributes three rows to the pooled table and exactly one of them succeeds, so those rows are perfectly dependent and the independence assumption the test requires does not hold.
 
 ### Per outcome
+
+Looking at the per-result calibration plots we can see that for the home results the 55-60% bin shows signs of miscalibration. The observed number of events falls outside of the error bars and there is significant deviation from perfect calibration line. This bin also has over 300 counts present so it is not due to the low sample size. The 20-25% bin also shows evidence of miscalibration as there is a somewhat decent sample size of just over 100 data points and the observed count falls outside of the error bars plus the calibration plot data point for this bin is distinctly above perfect calibration.
+Then the draw plots there is a lot fewer bins with data and only 1 bin with a significant sample size to comment on at all which is the 25-30% bin. The observed count is within the error bars and the point on the calibration plot deviates very slightly from perfect calibration. This is somewhat surprising to me due to the nature of draws in football and the fact that they are notoriously hard to predict so this is evidence of Bet365' models to be very good here. Looking at lower sample size bins though we can see very poor calibration, almost entirely due to the small sample sizes.
+Finally, looking at the away plots we see that all the observed counts fall within the error bars and all the bins with a large sample size are very close to the perfect calibration line which is representative of very good calibration.
 
 | | Mean error | as fixtures | χ² | bins | p |
 |---|---|---|---|---|---|
