@@ -1,4 +1,4 @@
-# Premier League Odds Calibration, 2002/03 – 2025/26
+v# Premier League Odds Calibration, 2002/03 – 2025/26
 
 Bookmakers publish prices, not probabilities. Convert the three outcomes of a football match into implied probabilities and they sum to between 102% and 108% rather than 100%, because a margin is built into every price. Remove that margin and a testable question remains: when Bet365 prices an outcome at 30%, does it happen 30% of the time?
 
