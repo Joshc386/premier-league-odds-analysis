@@ -1,22 +1,22 @@
-v# Premier League Odds Calibration, 2002/03 – 2025/26
+# Premier League Odds Calibration, 2002/03 – 2025/26
 
-Bookmakers publish prices, not probabilities. Convert the three outcomes of a football match into implied probabilities and they sum to between 102% and 108% rather than 100%, because a margin is built into every price. Remove that margin and a testable question remains: when Bet365 prices an outcome at 30%, does it happen 30% of the time?
+Bookmakers publish prices, not probabilities. There are three outcomes of a football match that when turned into implied probabilities they sum to between 102% and 108% rather than 100%, because a margin is built into every price, known as the overround. Remove that margin and a testable question remains: when Bet365 prices an outcome at 30%, does it happen 30% of the time?
 
 This applies one calibration procedure to 9,120 Premier League fixtures across 24 seasons, then repeats it for each outcome and each month of the season.
 
 ## Method
 
-The margin is removed with the **power method**, which solves for the exponent `k` such that the three quoted probabilities raised to `k` sum to 1. This is preferred to the naive reciprocal, which distributes the margin unevenly across outcomes and systematically distorts longshots.
+The margin is removed with the **power method**, which solves for the exponent `k` such that the three quoted probabilities raised to `k` sum to 1. This is the preferred method compared to more simplistic methods such as the additive or the multiplicative methods that are poor at producing implied probabilities for underdogs and large favourites relative to their actual rate of occurrence. So the power method should produce the most accurate underlying probabilities and therefore if there is miscalibration evident here it is more likely to be 'true' as a result of this methodology. In order to optimise this de-vigging method I needed to bin the data due to the fact that looking at the number of data points per percentage point results in a very small number of data points in many probabilities so binning the data appropriately ensured large enough sample sizes in most cases to perform proper analysis.
 
-Probabilities are grouped into 5-point bins. For each bin:
+Probabilities are grouped into 5-percentage-point bins. For each bin several metrics were calculated in order to properly visualise the calibration:
 
-- **Expected successes** = Σ*p* over the fixtures in the bin
+- **Expected events** = Σ*p* over the fixtures in the bin
 - **Variance** = Σ*p*(1−*p*), since the variances of independent 0/1 outcomes add
 - **Error bars** = ±1.96 √variance, a 95% interval, drawn only where at least 5 successes and 5 failures are expected
 
-Significance is tested with a **chi-squared goodness-of-fit** statistic using both cells of each bin — the events that happened and the events that did not. Adjacent bins are merged until each group holds at least 5 expected successes *and* 5 expected failures before the test is applied.
+Significance is tested with a **chi-squared goodness-of-fit** statistic using both the calculated expected events and the number of observed events to compute the chi-squared statistics properly. Adjacent bins are merged until each group holds at least 5 expected successes *and* 5 expected failures before the test is applied. This is due to the fact that at very low counts the distribution differs significantly from the chi-squared distribution as count data is obviously discrete but the chi-squared distribution is continuous. So at very low sample sizes the distribution is 'steppy' and diverges far from the chi-squared distribution.
 
-Forecast quality is measured with the **Brier score** against a base-rate benchmark: a forecaster who ignores the fixture and always quotes the long-run rate of that outcome.
+Calibration quality was measured mostly visually but also quantitatively using the Brier Score for each result individually. The predominant visuals used were calibration plots whereby perfect calibration was plotted as y=x then the implied mean probability for each probability bin was plotted against the actual frequency/rate of occurrence of events that were within each probability bin. Perfect calibration represents events occurring at the rate they are said to occur at and deviation from this line represents a miscalibration whereby Bet365 either **overestimates** how often an event occurs or **underestimates** how often an event occurs. Both are miscalibrations but represent different outcomes for the bookmaker. The **Brier score** is compared against a base-rate benchmark: a forecaster who ignores the fixture and always quotes the long-run rate of that outcome to assess whether the bookmaker's models were actually 'good'/calibrated or whether they just followed the base rate.
 
 ## Results
 
