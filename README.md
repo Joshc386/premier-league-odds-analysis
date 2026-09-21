@@ -38,6 +38,8 @@ Pooled across all three outcomes, bins sit a mean of **0.93 percentage points** 
   <img src="images/away_obs_v_exp.png" width="49%" alt="Calibration, away wins">
 </p>
 
+Here we can see the observed vs. expected counts for every bin for each result as well as overall. The error bar represents $\pm$ 95% (or 1.96 standard deviations) of the expected value and therefore any observed value for any bin outside of this range is considered 'significant'.
+
 No combined chi-squared test is reported. Every fixture contributes three rows to the pooled table and exactly one of them succeeds, so those rows are perfectly dependent and the independence assumption the test requires does not hold.
 
 ### Per outcome
