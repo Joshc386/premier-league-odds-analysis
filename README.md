@@ -23,13 +23,20 @@ Calibration quality was measured mostly visually but also quantitatively using t
 ### Calibration is good, but not as good as the aggregate suggests
 
 <p align="center">
-  <img src="images/calibration-all-outcomes.png" width="49%" alt="Calibration, all outcomes combined">
+  <img src="images/overall_calibration.png" width="49%" alt="Calibration, all outcomes combined">
   <img src="images/calibration-home.png" width="49%" alt="Calibration, home wins">
   <img src="images/calibration-draw.png" width="49%" alt="Calibration, draws">
   <img src="images/calibration-away.png" width="49%" alt="Calibration, away wins">
 </p>
 
 Pooled across all three outcomes, bins sit a mean of **0.93 percentage points** from perfect calibration, 17.61 points in total across 19 populated bins. Close, but not uniform: one bin, **30–35%**, falls outside its 95% interval, with 574 observed against 623.2 expected — a gap of 49.2 against a bar of ±40.2. A lot of the miscalibration on show is evident in the red-coloured data points which represents bins with far lower data points. But, the 30-35% bin is unlikely noise due to its large sample size so there is potential evidence for miscalibration here overall.
+
+<p align="center">
+  <img src="images/total_obs_v_exp.png" width="49%" alt="Calibration, all outcomes combined">
+  <img src="images/home_obs_v_exp.png" width="49%" alt="Calibration, home wins">
+  <img src="images/draw_obs_v_exp.png" width="49%" alt="Calibration, draws">
+  <img src="images/away_obs_v_exp.png" width="49%" alt="Calibration, away wins">
+</p>
 
 No combined chi-squared test is reported. Every fixture contributes three rows to the pooled table and exactly one of them succeeds, so those rows are perfectly dependent and the independence assumption the test requires does not hold.
 
