@@ -27,6 +27,7 @@ Calibration quality was measured mostly visually but also quantitatively using t
   <img src="images/calibration-home.png" width="49%" alt="Calibration, home wins">
   <img src="images/calibration-draw.png" width="49%" alt="Calibration, draws">
   <img src="images/calibration-away.png" width="49%" alt="Calibration, away wins">
+  <img src="calibratioon-all-results.png" width=49% alt="Calibration">
 </p>
 
 Pooled across all three outcomes, bins sit a mean of **0.93 percentage points** from perfect calibration, 17.61 points in total across 19 populated bins. Close, but not uniform: one bin, **30–35%**, falls outside its 95% interval, with 574 observed against 623.2 expected — a gap of 49.2 against a bar of ±40.2. A lot of the miscalibration on show is evident in the red-coloured data points which represents bins with far lower data points. But, the 30-35% bin is unlikely noise due to its large sample size so there is potential evidence for miscalibration here overall.
