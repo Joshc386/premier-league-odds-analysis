@@ -65,7 +65,7 @@ The Brier score here essentially measures the accuracy of the predictions made b
 
 ### Monthly
 I then proceeded to assess how calibration changes month-to-month as this gives an idea of how calibration changes throughout a season on average. Fixtures that were played in June and July were excluded though due to the fact that there were very few fixtures played in these months and all were during the 19/20 season due to the pandemic. A monthly view shows seasonal calibration and if there are variations worth noting.
-The monthly plots are very noisy due to the small sample sizes so I will not include them here but I will look at the errors associated with each month, specifically the mean error and the root mean squared error.
+The monthly calibration plots and observed vs. expected plots are very noisy due to the small sample sizes so I will not include them here but I will look at the errors associated with each month, specifically the mean error and the root mean squared error.
 
 <p align="center">
   <img src="images/monthly-error-home.png" width="32%" alt="Monthly error, home wins">
@@ -73,7 +73,7 @@ The monthly plots are very noisy due to the small sample sizes so I will not inc
   <img src="images/monthly-error-away.png" width="32%" alt="Monthly error, away wins">
 </p>
 
-Mean error is near zero in every month except March, where home wins and draws move in opposite directions — roughly mirror images.
+Mean error is near zero in every month except March, where home wins and draws move in opposite directions and roughly mirror one another. Other than that there is not much else of interest from these plots except for the spike in March for home results and the dip in March for draws. The positive home ME for March shows home results to have occurred more often than predicted and draws being negative show them to occur less than predicted so across the dataset these plots show that there is dependence on the number of results in each category which makes sense of course and it is unclear why there were more home wins and less draws than expected specifically in March by a noticeable amount.
 
 > The notebook reports the raw monthly p-values. The Bonferroni-adjusted column below is computed here rather than in the notebook: it is simply `p × 30`, the 30 being 3 outcomes × 10 months (June and July are excluded as they contain only rescheduled Covid-era fixtures).
 
